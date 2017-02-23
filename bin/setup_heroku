@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Setup heroku application remotes
+if heroku auth:whoami &> /dev/null; then
+  if heroku apps:info --app pl-cta-ly-staging &> /dev/null; then
+    git remote add staging git@heroku.com:pl-cta-ly-staging.git || true
+    git config heroku.remote staging
+    echo 'You are a collaborator on the "pl-cta-ly-staging" Heroku app'
+  else
+    echo 'Ask for access to the "pl-cta-ly-staging" Heroku app'
+  fi
+
+  if heroku apps:info --app pl-cta-ly-production &> /dev/null; then
+    git remote add production git@heroku.com:pl-cta-ly-production.git || true
+    echo 'You are a collaborator on the "pl-cta-ly-production" Heroku app'
+  else
+    echo 'Ask for access to the "pl-cta-ly-production" Heroku app'
+  fi
+else
+  echo 'You need to login to heroku. Run "heroku login"'
+fi
