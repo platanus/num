@@ -13,7 +13,7 @@ RSpec.describe BankAccount, type: :model do
     it 'fails validation with no holder_id' do
       bank_account.holder_id = nil
       expect(bank_account.valid?).to be_falsey
-      expect(bank_account.errors[:holder_id].size).to eq(1)
+      expect(bank_account.errors[:holder_id].size).to eq(2)
     end
 
     it 'fails validation with no bank_name' do
@@ -26,6 +26,12 @@ RSpec.describe BankAccount, type: :model do
       bank_account.account_type = nil
       expect(bank_account.valid?).to be_falsey
       expect(bank_account.errors[:account_type].size).to eq(1)
+    end
+
+    it 'fails validation with incorrect holder_id' do
+      bank_account.holder_id = '12.345.678-9'
+      expect(bank_account.valid?).to be_falsey
+      expect(bank_account.errors[:holder_id].size).to eq(1)
     end
   end
 end

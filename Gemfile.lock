@@ -224,6 +224,8 @@ GEM
       builder (< 4)
       rspec-core (>= 2, < 4, != 2.12.0)
     ruby_dep (1.5.0)
+    rut_validation (1.1.0)
+      railties (>= 4.1)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -294,6 +296,7 @@ DEPENDENCIES
   rspec-nc
   rspec-rails
   rspec_junit_formatter (= 0.2.2)
+  rut_validation
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   sentry-raven
@@ -304,4 +307,4 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
 
 BUNDLED WITH
-   1.14.3
+   1.14.6
