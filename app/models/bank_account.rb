@@ -17,6 +17,7 @@ class BankAccount < ActiveRecord::Base
   extend ActiveModel::Naming
 
   validates :holder_name, :holder_id, :bank_name, :account_type, :account_number, presence: true
+  validates :holder_id, rut: true
 
   enumerize :bank_name, i18n_scope: 'bank_names', in: [
     :bbva,
