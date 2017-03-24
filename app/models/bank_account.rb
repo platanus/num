@@ -2,20 +2,21 @@
 #
 # Table name: bank_accounts
 #
-#  id           :integer          not null, primary key
-#  holder_name  :string
-#  holder_id    :string
-#  bank_name    :string
-#  account_type :string
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id             :integer          not null, primary key
+#  holder_name    :string
+#  holder_id      :string
+#  bank_name      :string
+#  account_type   :string
+#  account_number :string
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
 #
 
 class BankAccount < ActiveRecord::Base
   extend Enumerize
   extend ActiveModel::Naming
 
-  validates :holder_name, :holder_id, :bank_name, :account_type, presence: true
+  validates :holder_name, :holder_id, :bank_name, :account_type, :account_number, presence: true
 
   enumerize :bank_name, i18n_scope: 'bank_names', in: [
     :bbva,

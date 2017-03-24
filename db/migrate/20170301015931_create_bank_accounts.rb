@@ -5,6 +5,7 @@ class CreateBankAccounts < ActiveRecord::Migration
       t.string :holder_id
       t.string :bank_name
       t.string :account_type
+      t.string :account_number
 
       t.timestamps null: false
     end

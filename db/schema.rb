@@ -21,8 +21,9 @@ ActiveRecord::Schema.define(version: 20170301020555) do
     t.string   "holder_id"
     t.string   "bank_name"
     t.string   "account_type"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "account_number"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "delayed_jobs", force: :cascade do |t|
@@ -43,9 +44,9 @@ ActiveRecord::Schema.define(version: 20170301020555) do
 
   create_table "handles", force: :cascade do |t|
     t.string   "handle"
-    t.boolean  "verified"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.boolean  "verified",        default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "bank_account_id"
   end
 

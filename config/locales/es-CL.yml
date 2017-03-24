@@ -1,2 +1,24 @@
 es-CL:
-  hello: "Hola mundo"
+  bank_names:
+    bbva: "BBVA"
+    bci: "BCI - TBanc"
+    bice: "Bice"
+    bancoestado: "BancoEstado"
+    corpbanca: "Corpbanca"
+    consorcio: "Consorcio"
+    de_chile: "Banco de Chile"
+    # :deutsche
+    falabella: "Falabella"
+    hsbc: "HSBC"
+    paris: "Paris"
+    itau: "Itaú"
+    # :penta
+    ripley: "Ripley"
+    # :rabobank
+    security: "Security"
+    santander: "Santander"
+    scotiabank: "Scotiabank"
+  account_types:
+    corriente: "Corriente"
+    vista: "Vista"
+    ahorro: "Ahorro"

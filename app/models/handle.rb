@@ -4,7 +4,7 @@
 #
 #  id              :integer          not null, primary key
 #  handle          :string
-#  verified        :boolean
+#  verified        :boolean          default(FALSE)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  bank_account_id :integer
