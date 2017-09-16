@@ -509,6 +509,7 @@ GEM
     formatador (0.2.5)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    google-webfonts-rails (0.0.1)
     guard (2.14.1)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -700,6 +701,7 @@ DEPENDENCIES
   enumerize
   factory_girl_rails
   faker
+  google-webfonts-rails
   guard-rspec
   heroku-stage
   jbuilder (~> 2.0)

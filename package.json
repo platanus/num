@@ -6,6 +6,7 @@
   "author": "mariowise <mario@platan.us>",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "components-font-awesome": "^4.6.3"
   }
 }
