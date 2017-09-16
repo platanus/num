@@ -20,6 +20,7 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'enumerize'
 gem 'google-webfonts-rails'
+gem 'devise'
 
 group :production do
   gem 'rack-timeout'
@@ -34,6 +35,8 @@ end
 group :development do
   gem 'annotate'
   gem 'letter_opener'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development, :test do
