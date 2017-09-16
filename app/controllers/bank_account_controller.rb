@@ -1,6 +1,5 @@
 class BankAccountController < ApplicationController
   def create
-    binding.pry
     @bank_account = BankAccount.new(bank_account_params)
 
     if @bank_account.save
