@@ -1,0 +1,11 @@
+{
+  "name": "cta.ly",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:platanus/cta.ly.git",
+  "author": "mariowise <mario@platan.us>",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
