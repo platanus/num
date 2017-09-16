@@ -15,10 +15,10 @@
 #
 # Foreign Keys
 #
-#  fk_rails_d8b3757626  (bank_account_id => bank_accounts.id)
+#  fk_rails_...  (bank_account_id => bank_accounts.id)
 #
 
-class Handle < ActiveRecord::Base
+class Handle < ApplicationRecord
   belongs_to :bank_account
 
   validates :handle, presence: true, uniqueness: true

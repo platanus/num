@@ -12,7 +12,7 @@
 #  updated_at     :datetime         not null
 #
 
-class BankAccount < ActiveRecord::Base
+class BankAccount < ApplicationRecord
   extend Enumerize
   extend ActiveModel::Naming
 
