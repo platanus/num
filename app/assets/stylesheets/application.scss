@@ -10,9 +10,31 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  *= require bootstrap/dist/css/bootstrap
  *= require components-font-awesome/css/font-awesome.min
+ *= require_self
+ *= require_tree .
  */
 
+// Variables
+$site-soft-green: #f8fff8;
+
+// Site config
+$site-background-color: $site-soft-green;
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+
+  &.no-scroll {
+    height: 100%;
+  }
+}
+
+
+.nav-tabs > li {
+  margin-bottom: -2px;
+}

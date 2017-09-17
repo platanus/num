@@ -1,0 +1,28 @@
+<%= render 'nav' %>
+
+<div class="form-group">
+  <label>Banco</label>
+  <div class="form-control"><%= @account.bank.name %></div>
+</div>
+
+<div class="form-group">
+  <label>Tipo de cuenta</label>
+  <div class="form-control"><%= @account.account_type.name %></div>
+</div>
+
+<div class="form-group">
+  <label>Número de cuenta</label>
+  <div class="form-control"><%= @account.number %></div>
+</div>
+
+<div class="form-group">
+  <label>DNI</label>
+  <div class="form-control"><%= @account.dni %></div>
+</div>
+
+<button class="btn btn-default"><i class="fa fa-envelope"></i> Enviar</button>
+<button class="btn btn-default"><i class="fa fa-share-alt-square"></i> Compartir</button>
+
+<%= link_to account_path(@account), method: :delete, class: "btn btn-danger" do %>
+  <i class="fa fa-trash"></i> Eliminar
+<% end %>
