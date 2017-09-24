@@ -33,16 +33,6 @@ ActiveRecord::Schema.define(version: 20170917002508) do
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
-  create_table "bank_accounts", id: :serial, force: :cascade do |t|
-    t.string "holder_name"
-    t.string "holder_id"
-    t.string "bank_name"
-    t.string "account_type"
-    t.string "account_number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "banks", force: :cascade do |t|
     t.string "symbol"
     t.string "name"
@@ -62,15 +52,6 @@ ActiveRecord::Schema.define(version: 20170917002508) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
-  end
-
-  create_table "handles", id: :serial, force: :cascade do |t|
-    t.string "handle"
-    t.boolean "verified", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "bank_account_id"
-    t.index ["bank_account_id"], name: "index_handles_on_bank_account_id"
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
@@ -99,5 +80,4 @@ ActiveRecord::Schema.define(version: 20170917002508) do
   add_foreign_key "accounts", "account_types"
   add_foreign_key "accounts", "banks"
   add_foreign_key "accounts", "users"
-  add_foreign_key "handles", "bank_accounts"
 end
