@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CtaLy</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="application-layout">
+    <div class="application-layout__navbar">
+      <%= render 'layouts/application/navbar' %>
+    </div>
+    <div class="container">
+      <div class="application-layout__page">
+        <div class="application-layout__sidebar">
+          <%= render 'layouts/application/sidebar' %>
+        </div>
+        <div class="application-layout__content">
+          <%= yield %>
+        </div>
+        <div class="application-layout__help">
+          <%= yield :help %>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

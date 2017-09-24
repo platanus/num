@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'aws-sdk'
 gem 'aws-sdk-rails'
-gem 'coffee-rails', '~> 4.1.0'
 gem 'delayed_job_active_record'
 gem 'heroku-stage'
 gem 'jbuilder', '~> 2.0'
@@ -10,8 +9,8 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'puma'
 gem 'rack-cors', '~> 0.4.0'
-gem 'rails', '4.2.7.1'
 gem 'rails-i18n'
+gem 'rails', '5.1.4'
 gem 'recipient_interceptor'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0'
@@ -20,6 +19,7 @@ gem 'spring'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'enumerize'
+gem 'devise'
 
 group :production do
   gem 'rack-timeout'
@@ -34,6 +34,8 @@ end
 group :development do
   gem 'annotate'
   gem 'letter_opener'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development, :test do

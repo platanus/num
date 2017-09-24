@@ -1,0 +1,33 @@
+<%= render 'nav' %>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Banco</th>
+        <th>Tipo de cuenta</th>
+        <th>Número de cuenta</th>
+        <th>DNI</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @accounts.each do |account| %>
+        <tr>
+          <td><%= account.bank.name %></td>
+          <td><%= account.account_type.name %></td>
+          <td><%= account.number %></td>
+          <td><%= account.dni %></td>
+          <td><%= link_to account_path(account), class: "btn btn-default btn-sm" do %><i class="fa fa-eye"></i><% end %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<% content_for :help do %>
+<div class="callout callout-info">
+  <h4>Cuentas</h4>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias quo fuga perspiciatis, quisquam, aliquam tempore unde enim iusto similique possimus, optio at, et nemo dolorem repellat. Sed eveniet qui, deleniti.</p>
+</div>
+<% end %>

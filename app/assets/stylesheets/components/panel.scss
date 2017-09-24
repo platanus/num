@@ -1,0 +1,13 @@
+.panel-devise {
+  width: 100%;
+  max-width: 400px;
+  padding: 0 30px;
+  margin-top: -170px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+  }
+}

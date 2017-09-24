@@ -1,0 +1,8 @@
+<ul class="application-layout__nav nav nav-tabs">
+  <li role="presentation" class="<%= "active" if action_name == "index" %>">
+    <%= link_to "Mis Cuentas", accounts_path %>
+  </li>
+  <li role="presentation" class="<%= "active" if action_name == "new" %>">
+    <%= link_to new_account_path do %><i class="fa fa-plus"></i> Crear Cuenta<% end %>
+  </li>
+</ul>
