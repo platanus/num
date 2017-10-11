@@ -19,7 +19,9 @@ class LandingController < ApplicationController
   end
 
   def show
-    @resource = User.find_by(email: params[:email] + '.' + params[:format])
+    @resource = User.find_by(email: "#{params[:email]}.#{params[:format]}")
+    raise ActionController::RoutingError.new('Not found') if @resource&.confirmed_at.nil?
+    @resource
   end
 
   def success
