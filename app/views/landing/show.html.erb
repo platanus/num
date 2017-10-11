@@ -1,15 +1,32 @@
+<% acc = @resource.accounts.first %>
 <div>
   <%= @resource.name %>
   </br>
   <%= @resource.dni %>
   </br>
-  <% @resource.accounts.first.tap do |acc| %>
-    <%= acc.bank.name %>
-    </br>
-    <%= acc.account_type.name %>
-    </br>
-    <%= acc.number %>
-    </br>
-  <% end %>
+  <%= acc.bank.name %>
+  </br>
+  <%= acc.account_type.name %>
+  </br>
+  <%= acc.number %>
+  </br>
   <%= @resource.email %>
 </div>
+---
+<div>
+  ¿Acabas de conocer num.cl? ¡Te invitamos a <%= link_to root_path do %>registrar<% end %> también tus datos!
+</div>
+---
+<div>
+  ¿Tus datos están incorrectos? Simeplemente <%= link_to root_path do %>vuelve a registrarte<% end %> con tu mismo email :)
+</div>
+
+<% content_for :og_tags do %>
+  <meta property="og:title" content="<%= @resource.name %>" />
+  <meta property="og:description"
+    content="<> <%= @resource.dni %> <> <%= acc.bank.name %> <> <%= acc.account_type.name %> <> <%= acc.number %> <>" />
+  <meta property="og:url" content="<%= request.url %>" />
+  <meta property="og:image" itemprop="image" content="<%= "#{request.protocol}#{request.host_with_port}/logo.png" %>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_LA" />
+<% end %>
