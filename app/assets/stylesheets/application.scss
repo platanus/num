@@ -13,14 +13,27 @@
  *= require bootstrap/dist/css/bootstrap
  *= require components-font-awesome/css/font-awesome.min
  *= require_self
- *= require_tree .
  */
 
 // Variables
 $site-soft-green: #f8fff8;
+$site-dark-blue: #6886df;
+$site-blue: #7799ff;
+$site-soft-blue: #a4b9f9;
 
 // Site config
 $site-background-color: $site-soft-green;
+
+@import "components/layouts";
+@import "components/btn";
+@import "components/callout";
+@import "components/footer";
+@import "components/panel";
+@import "components/forms";
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
 
 html {
   height: 100%;
@@ -34,7 +47,14 @@ body {
   }
 }
 
-
 .nav-tabs > li {
   margin-bottom: -2px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: $site-blue;
+}
+
+p {
+  color: #808080;
 }
