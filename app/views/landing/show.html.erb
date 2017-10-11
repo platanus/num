@@ -1,0 +1,15 @@
+<div>
+  <%= @resource.name %>
+  </br>
+  <%= @resource.dni %>
+  </br>
+  <% @resource.accounts.first.tap do |acc| %>
+    <%= acc.bank.name %>
+    </br>
+    <%= acc.account_type.name %>
+    </br>
+    <%= acc.number %>
+    </br>
+  <% end %>
+  <%= @resource.email %>
+</div>

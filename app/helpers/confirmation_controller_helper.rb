@@ -1,0 +1,2 @@
+module ConfirmationControllerHelper
+end
