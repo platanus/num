@@ -29,3 +29,33 @@
     margin-bottom: 15px;
   }
 }
+
+$landing-layout-line-height: 100px;
+
+.landing-layout {
+  &__nav {
+    margin-bottom: 15px;
+    font-size: 18px;
+
+    .navbar-default {
+      min-height: $landing-layout-line-height;
+      background-color: transparent;
+      border: 0;
+    }
+
+    .nav > li > a {
+      line-height: $landing-layout-line-height;
+    }
+
+    .navbar-brand {
+      font-size: 40px;
+      font-weight: bolder;
+      line-height: $landing-layout-line-height;
+      color: $site-blue;
+    }
+  }
+
+  h1 {
+
+  }
+}

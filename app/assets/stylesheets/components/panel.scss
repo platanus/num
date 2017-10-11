@@ -1,6 +1,6 @@
-.panel-devise {
+.panel-devise,
+.panel-landing {
   width: 100%;
-  max-width: 400px;
   padding: 0 30px;
   margin-top: -170px;
 
@@ -9,5 +9,14 @@
     justify-content: center;
     height: 100%;
     align-items: center;
+  }
+}
+
+.panel-landing {
+  margin-top: 0;
+
+  &__form {
+    max-width: 400px;
+    margin: 50px auto;
   }
 }

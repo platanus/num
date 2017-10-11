@@ -1,0 +1,11 @@
+.footer {
+  &__up {
+    height: 250px;
+    background-color: $site-blue;
+  }
+
+  &__down {
+    height: 50px;
+    background-color: $site-dark-blue;
+  }
+}
