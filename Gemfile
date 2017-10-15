@@ -20,6 +20,7 @@ gem 'sentry-raven'
 gem 'spring'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'webpacker'
 
 group :production do
   gem 'rack-timeout'
