@@ -15,6 +15,7 @@ test:
   database: cta_ly_test
 
 production: &deploy
+  adapter: postgresql
   encoding: utf8
   min_messages: warning
   pool: <%= [Integer(ENV.fetch("MAX_THREADS", 5)), Integer(ENV.fetch("DB_POOL", 5))].max %>
