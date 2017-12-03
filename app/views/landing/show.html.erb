@@ -66,9 +66,9 @@
 </div>
 
 <% content_for :og_tags do %>
-  <meta property="og:title" content="<%= @resource.name %>" />
+  <meta property="og:title" content="<%= @resource.name %> | <%= @resource.dni %>" />
   <meta property="og:description"
-    content="<> <%= @resource.dni %> <> <%= acc.bank.name %> <> <%= acc.account_type.name %> <> <%= acc.number %> <>" />
+    content="<%= @acc.bank.name %> | <%= @acc.account_type.name %> | <%= @acc.number %>" />
   <meta property="og:url" content="<%= request.url %>" />
   <meta property="og:image" itemprop="image" content="<%= "#{request.protocol}#{request.host_with_port}/logo.png" %>" />
   <meta property="og:type" content="website" />
