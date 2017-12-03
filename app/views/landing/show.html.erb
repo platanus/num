@@ -1,24 +1,68 @@
-<% acc = @resource.accounts.first %>
-<div>
-  <%= @resource.name %>
-  </br>
-  <%= @resource.dni %>
-  </br>
-  <%= acc.bank.name %>
-  </br>
-  <%= acc.account_type.name %>
-  </br>
-  <%= acc.number %>
-  </br>
-  <%= @resource.email %>
-</div>
----
-<div>
-  ¿Acabas de conocer num.cl? ¡Te invitamos a <%= link_to root_path do %>registrar<% end %> también tus datos!
-</div>
----
-<div>
-  ¿Tus datos están incorrectos? Simeplemente <%= link_to root_path do %>vuelve a registrarte<% end %> con tu mismo email :)
+<% @acc = @resource.accounts.first %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+<script>
+  var clipboard = new Clipboard('.copy_btn');
+
+  clipboard.on('success', function(e) {
+    e.trigger.innerHTML = '¡COPIADO!';
+    setTimeout(function() {
+      e.trigger.innerHTML = 'copiar';
+    }, 1000);
+  });
+</script>
+
+<div class="container">
+
+  <div class="text-center">
+    <h1><%= @resource.name %></h1>
+    <p>Mis datos bancarios son:</p>
+  </div>
+
+  <div class="col-md-4 col-md-offset-4">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <span class="badge" style="background-color:#7799ff">
+          <a href="#" name="Rut" class="copy_btn" style="color:white" data-clipboard-text="<%= @resource.dni %>">copiar</a>
+        </span>
+        Rut: <b><%= @resource.dni %></b>
+      </li>
+
+      <li class="list-group-item">
+        <span class="badge" style="background-color:#7799ff">
+          <a href="#" name="Nombre del Banco"  class="copy_btn" style="color:white" data-clipboard-text="<%= @acc.bank.name %>">copiar</a>
+        </span>
+        Banco: <b><%= @acc.bank.name %></b>
+      </li>
+
+      <li class="list-group-item">
+        <span class="badge" style="background-color:#7799ff">
+          <a href="#" name="Tipo de Cuenta"  class="copy_btn" style="color:white" data-clipboard-text="<%= @acc.account_type.name %>">copiar</a>
+        </span>
+        Tipo: <b><%= @acc.account_type.name %></b>
+      </li>
+
+      <li class="list-group-item">
+        <span class="badge" style="background-color:#7799ff">
+          <a href="#" name="Número de Cuenta"  class="copy_btn" style="color:white" data-clipboard-text="<%= @acc.number %>">copiar</a>
+        </span>
+        Número: <b><%= @acc.number %></b>
+      </li>
+
+      <li class="list-group-item">
+        <span class="badge" style="background-color:#7799ff">
+          <a href="#" name="Email"  class="copy_btn" style="color:white" data-clipboard-text="<%= @resource.email %>">copiar</a>
+        </span>
+        Email: <b><%= @resource.email %></b>
+      </li>
+    </ul>
+
+    <div class="text-center">
+      <h4>¿Acabas de conocer num.cl?</h4>
+      <p>¡Te invitamos a <b><%= link_to root_path do %>registrar<% end %></b> también tus datos!</p>
+      <h4>¿Tus datos están incorrectos?</h4>
+      <p>Simplemente <b><%= link_to root_path do %>vuelve a registrarte<% end %></b> con tu mismo email :)</p>
+    </div>
+  </div>
 </div>
 
 <% content_for :og_tags do %>
