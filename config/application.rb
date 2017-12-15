@@ -5,6 +5,7 @@ Bundler.require(*Rails.groups)
 
 module CtaLy
   class Application < Rails::Application
+    config.active_job.queue_adapter = :sidekiq
     config.active_job.queue_adapter = :delayed_job
     config.middleware.insert_before 0, Rack::Cors do
       allow do
