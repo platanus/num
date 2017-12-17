@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.active_job.queue_adapter = :async
   config.active_job.queue_adapter = :inline
   config.action_mailer.delivery_method = :letter_opener
   # Settings specified here will take precedence over those in config/application.rb.

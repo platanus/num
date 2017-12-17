@@ -53,3 +53,10 @@ end
 group :production, :development, :test do
   gem 'tzinfo-data'
 end
+
+gem 'send_grid_mailer'
+gem 'sidekiq'
+
+group :production do
+  gem 'heroku-stage'
+end
