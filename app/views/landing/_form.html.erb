@@ -1,31 +1,31 @@
 <%= form_for(@resource) do |f| %>
   <div class="form-group">
-    <%= f.label :name %>
+    <%= f.label :name, 'Nombre Completo' %>
     <%= f.text_field :name, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :email %>
+    <%= f.label :email, 'E-mail' %>
     <%= f.text_field :email, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :dni %>
+    <%= f.label :dni, 'RUT' %>
     <%= f.text_field :dni, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :number %>
+    <%= f.label :number, 'Número de cuenta' %>
     <%= f.text_field :number, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :account_type_id %>
+    <%= f.label :account_type_id, 'Tipo de cuenta' %>
     <%= collection_select :form_account_user, :account_type_id, AccountType.all, :id, :name, {}, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :bank_id %>
+    <%= f.label :bank_id, 'Banco' %>
     <%= collection_select :form_account_user, :bank_id, Bank.all, :id, :name, {}, class: "form-control" %>
   </div>
 
