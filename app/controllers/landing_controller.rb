@@ -19,7 +19,10 @@ class LandingController < ApplicationController
   end
 
   def show
-    @resource = User.find_by(email: "#{params[:email]}.#{params[:format]}")
+    is_email = Devise::email_regexp =~ params[:email]
+    raise ActionController::RoutingError.new('Not found') unless is_email
+
+    @resource = User.find_by(email: params[:email])
     raise ActionController::RoutingError.new('Not found') if @resource&.confirmed_at.nil?
     @resource
   end
