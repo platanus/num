@@ -1,4 +1,3 @@
-<% @acc = @resource.accounts.first %>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
 
 <style>
@@ -21,10 +20,16 @@
     <ul class="list-group">
       <li class="list-group-item">
         <span class="badge">
-          <a href="#" name="Rut" class="copy_btn" data-clipboard-text="<%= @resource.dni %>">copiar</a>
+          <a href="#" name="Name" class="copy_btn" data-clipboard-text="<%= @resource.name %>">copiar</a>
         </span>
-        Rut: <b><%= @resource.dni %></b>
+        Nombre: <b><%= @resource.name %></b>
       </li>
+        <li class="list-group-item">
+          <span class="badge">
+            <a href="#" name="Rut" class="copy_btn" data-clipboard-text="<%= @resource.dni %>">copiar</a>
+          </span>
+          Rut: <b><%= @resource.dni %></b>
+        </li>
 
       <li class="list-group-item">
         <span class="badge">
@@ -56,6 +61,12 @@
     </ul>
 
     <div class="text-center">
+      <button type="button" class="btn btn-primary copy_btn" data-clipboard-text="<%= @full_acc_details %>">
+        Copiar todos los datos
+      </button>
+    </div>
+
+    <div class="text-center">
       <h4>¿Acabas de conocer num.cl?</h4>
       <p>¡Te invitamos a <b><%= link_to root_path do %>registrar<% end %></b> también tus datos!</p>
       <h4>¿Tus datos están incorrectos?</h4>
@@ -68,9 +79,10 @@
   var clipboard = new Clipboard('.copy_btn');
 
   clipboard.on('success', function(e) {
+    var original_text = e.trigger.innerHTML
     e.trigger.innerHTML = '¡COPIADO!';
     setTimeout(function() {
-      e.trigger.innerHTML = 'copiar';
+      e.trigger.innerHTML = original_text;
     }, 1000);
   });
 </script>
@@ -78,7 +90,8 @@
 <% content_for :og_tags do %>
   <meta property="og:title" content="<%= @resource.name %> | <%= @resource.dni %>" />
   <meta property="og:description"
-    content="<%= @acc.bank.name %> | <%= @acc.account_type.name %> | <%= @acc.number %>" />
+    content="<%= @acc.bank.name %> | <%= @acc.account_type.name %> | <%= @acc.number %>"
+  />
   <meta property="og:url" content="<%= request.url %>" />
   <meta property="og:image" itemprop="image" content="<%= "#{request.protocol}#{request.host_with_port}/logo.png" %>" />
   <meta property="og:type" content="website" />
