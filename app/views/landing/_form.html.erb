@@ -30,11 +30,24 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :username, 'url (opcional)' %>
+    <%= f.label :username, 'URL personalizada (opcional)', id: 'url_example' %>
     <%= f.text_field :username, id: 'username_text_field', class: 'form-control' %>
   </div>
 
   <div>
     <button class="btn btn-primary"><i class="fa fa-floppy-o"></i> Guardar</button>
   </div>
+
+  <script>
+  var url_example = document.getElementById('url_example');
+  var tentative_url = document.getElementById('username_text_field');
+  tentative_url.onkeyup = function(){
+    url = tentative_url.value.toLowerCase()
+    if(url=='') {
+      url_example.innerHTML = 'URL personalizada (opcional)'
+    } else {
+      url_example.innerHTML = "Num.cl/" + url;
+    }
+  }
+  </script>
 <% end %>
