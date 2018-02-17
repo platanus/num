@@ -36,7 +36,7 @@ class LandingController < ApplicationController
 
   def resource_params
     params.require(:form_account_user).permit(
-      :dni, :name, :email, :number, :account_type_id, :bank_id
+      :dni, :name, :email, :number, :account_type_id, :bank_id, :username
     )
   end
 
