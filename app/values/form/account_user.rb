@@ -7,7 +7,11 @@ module Form
 
     def save
       password = SecureRandom.hex(8)
-      username = nil if username&.empty?
+      if username&.empty?
+        username = nil
+      else
+        username.downcase!
+      end
 
       user = User.create!(
         dni: dni,
