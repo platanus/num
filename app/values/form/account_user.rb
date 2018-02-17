@@ -7,7 +7,7 @@ module Form
 
     def save
       password = SecureRandom.hex(8)
-      if username&.empty?
+      if username.nil? || username.empty?
         username = nil
       else
         username.downcase!
