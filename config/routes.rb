@@ -18,5 +18,5 @@ Rails.application.routes.draw do
     sign_up: 'cmon_let_me_in'
   }, controllers: { confirmations: 'confirmation' }
 
-  get '*email', to: 'landing#show', as: :landing_show, format: false
+  get '*user_ref', to: 'landing#show', as: :landing_show, format: false
 end

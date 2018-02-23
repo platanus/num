@@ -18,11 +18,14 @@ class LandingController < ApplicationController
   end
 
   def show
-    is_email = Devise.email_regexp =~ params[:email]
-    raise ActionController::RoutingError, 'Not found' unless is_email
-
-    @resource = User.find_by(email: params[:email])
+    is_email = Devise.email_regexp =~ params[:user_ref]
+    if is_email
+      @resource = User.find_by(email: params[:user_ref])
+    else
+      @resource = User.find_by(username: params[:user_ref])
+    end
     raise ActionController::RoutingError, 'Not found' if @resource&.confirmed_at.nil?
+
     @acc = @resource.accounts.first
     @full_acc_details = full_acc_details(@resource, @acc)
   end
@@ -33,7 +36,7 @@ class LandingController < ApplicationController
 
   def resource_params
     params.require(:form_account_user).permit(
-      :dni, :name, :email, :number, :account_type_id, :bank_id
+      :dni, :name, :email, :number, :account_type_id, :bank_id, :username
     )
   end
 

@@ -5,7 +5,9 @@ class ConfirmationController < Devise::ConfirmationsController
     if resource.errors.empty?
       set_flash_message(:notice, :confirmed) if is_navigational_format?
       sign_in(resource_name, resource)
-      respond_with_navigational(resource){ redirect_to landing_show_path(email: resource.email) }
+      user_ref = resource.username
+      user_ref = resource.email unless user_ref
+      respond_with_navigational(resource){ redirect_to landing_show_path(user_ref: user_ref) }
     else
       respond_with_navigational(resource.errors, :status => :unprocessable_entity){ render_with_scope :new }
     end
